@@ -1,0 +1,11 @@
+# open a terminal
+$ roslaunch pitasc_common bringup_examples.launch
+
+# in a new terminal, shows the data published on this topic (describes target1, including positions and orientations etc.)
+$ rostopic echo /interactive_marker_server/feedback
+
+# in a new terminal, you can change the argument 'pose' with 'position x, y, z' and orientation 'x,y,z,w' to change the postion of target1
+$ rostopic pub -1 /interactive_marker_server/feedback visualization_msgs/InteractiveMarkerFeedback  '{header: {stamp: [0,0], frame_id: base_link}, client_id: /rviz/InteractiveMarkers, marker_name: /interactive_transform_publisher, control_name: move_y, pose: {position:[x,y,z],orientation:[x,y,z,w]}}'
+
+# in a new terminal, the robot will reach traget1 in this example
+$ rosrun pitasc file_reader.py pitasc_common examples/beginner/simple_move.xml
