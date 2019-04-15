@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This example application shows a minimal project.
+
+A UR5 moves to a target (LIN). Then the application terminates.
+-->
+
+<pitasc>
+
+    <models>
+        <!-- Include pitasc -->
+        <include package="pitasc_library" file="models/pitasc.xml"/>
+
+        <!-- Include the UR5 -->
+        <include package="pitasc_library" file="universal_robots/ur.xml"/>
+
+        <!-- Include the idle skill -->
+        <include package="pitasc_library" file="skills/skill_track_frame.xml"/>
+
+    </models>
+
+    <!-- Create a project -->
+    <instance type="project">
+
+        <member id="configuration">
+            <!-- Use the default configuration with recommended settings -->
+            <instance id="configuration" type="default_configuration"/>
+        </member>
+
+        <member id="environment">
+            <!-- Add a UR5 -->
+            <instance type="robot_ur5">
+                <member id="robot_driver.max_velocity">2</member>
+                <member id="robot_driver.max_acceleration">4</member>
+            </instance>
+        </member>
+
+        <member id="applications">
+
+            <!-- Use a skill sequence as a container -->
+            <instance type="skill_sequence">
+
+                <!-- Use the UR5 for this skill (and for its subskill) -->
+                <member id="robot" reference_id="environment.robot_ur5"/>
+
+                <!-- Add subskill(s) -->
+                <member id="skills">
+
+                    <!-- Move to target1 (lin) -->
+                    <instance type="skill_track_frame">
+                        <member id="tool_frame">tool</member>
+                        <member id="target_frame">target1</member>
+                    </instance>
+
+                </member>
+
+            </instance>
+
+        </member>
+
+    </instance>
+
+</pitasc>
