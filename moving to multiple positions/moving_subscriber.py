@@ -10,10 +10,10 @@ def callback(data):
     z = data.pose.position.z
     rospy.loginfo('Subscribe x: {}, y: {}, z:{}'.format(x,y,z))
 
-def main():
+def listener():
     rospy.init_node('listener', anonymous=True)
     rospy.Subscriber('/interactive_marker_server/feedback',InteractiveMarkerFeedback, callback)
     rospy.spin()
     
 if __name__ == '__main__':
-    main()
+    listener()
