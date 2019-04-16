@@ -10,6 +10,6 @@ How to run them?
 4. run your files\
    `$ rosrun pitasc_common moving_publisher.py`\
    `$ rosrun pitasc_common moving_subscriber.py`
-5. move `track_frame.xml` to `catkin_ws/src/pitasc_common/examples/beginner`
-   run `track_frame.xml` file to visualize how robotor tracks the target1.
+5. move `track_frame.xml` to `catkin_ws/src/pitasc_common/examples/beginner`\
+   run `track_frame.xml` file to visualize how robotor tracks the target1\
    `$ rosrun pitasc file_reader.py pitasc_common examples/beginner/track_frame.xml`
