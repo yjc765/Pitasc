@@ -3,8 +3,10 @@ The file 'moving_pubisher' publishes the messages to move the target1 in a loop,
 How to run them?
 1. move these two files to \~/catkin_ws/src/pitasc_common/scripts
 2. make them executable \
+   '''
    $ chmod +x ~/catkin_ws/src/pitasc_common/scripts/moving_publisher.py\
    $ chmod +x ~/catkin_ws/src/pitasc_common/scripts/moving_subscriber.py
+   '''
 3. Open your GUI by\
    $ roslaunch pitasc_common bringup_examples.launch
 4. run your files\
