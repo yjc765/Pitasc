@@ -1,6 +1,6 @@
 The file `moving_pubisher.py` publishes the messages to move the target1 in a loop, the `moving_sublisher.py` subscribes the location message of Publisher. 
 
-How to run them?
+##How to run them?
 1. move these two files to `~/catkin_ws/src/pitasc_common/scripts`
 2. make them executable   
    `$ chmod +x ~/catkin_ws/src/pitasc_common/scripts/moving_publisher.py`\
